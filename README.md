@@ -1,2 +1,2 @@
-# py-stock
+# PyStock
 Python language stock library.
