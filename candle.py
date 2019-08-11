@@ -5,21 +5,20 @@ import csv
 
 # Candle
 
-def create(data, open, high, low, close, volume):
-	return Candle(data, open, high, low, close, volume, open_int)
+def create(date, open, high, low, close, volume):
+	return Candle(date, open, high, low, close, volume)
 
 
 
 class Candle:
 
-	def __init__(self, open_, high, low, close, volume):
+	def __init__(self, date, open_, high, low, close, volume):
 		self._date = date
 		self._open = open_
 		self._high = high
 		self._low = low
 		self._close = close
 		self._volume = volume
-		self._open_int = open_int
 
 
 	def date(self):
@@ -46,10 +45,6 @@ class Candle:
 		return self._volume
 
 
-	def open_int(self):
-		return self._open_int
-
-
 	def is_bullish(self):
 		return self._low < self._high
 
@@ -74,7 +69,7 @@ class Candle:
 	def __eq__(self, other):
 		return self._date == other.date() and self._open == other.open() and self._high == other.high() and \
 				self._low == other.low() and self._close == other.close() and self._volume == other.volume() and \
-				self._volume == other.volume() and self._open_int == other.open_int() 
+				self._volume == other.volume()
 
 
 	def __str__(self):
