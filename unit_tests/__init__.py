@@ -1,4 +1,6 @@
 
 __all__ = [
-	'main'
+	'main',
+	'test_candle',
+	'test_stock'
 ]
