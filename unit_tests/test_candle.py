@@ -1,6 +1,10 @@
 
 import unittest
-import candle
+
+try:
+	from .. import candle
+except:
+	import candle
 
 
 
