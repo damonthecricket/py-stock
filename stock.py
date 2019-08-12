@@ -4,16 +4,18 @@ try:
 except:
 	import candle
 
+import csv
+
 
 
 # Stock
 
-def named(name):
+def load(name):
 	assert len(name) > 0
 
 	file = []
 
-	with open('data/' + name, newline = '') as csvfile:
+	with open('data/' + name + '.txt', newline = '') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
 			file.append(row)
@@ -21,16 +23,21 @@ def named(name):
 	candles = []
 
 	for dictionary in file:
-		candle = candle.create(c["Date"], c["Open"], c["High"], c["Low"], c["Close"], c["Volume"])
+		c = candle.create(dictionary["Date"], 
+							dictionary["Open"], 
+							dictionary["High"], 
+							dictionary["Low"], 
+							dictionary["Close"], 
+							dictionary["Volume"])
 		candles.append(candle)
 
 
-	return candles
+	return create(name, candles)
 
 
 
 def create(name, candles):
-	return Stock(name, csv_file)
+	return Stock(name, candles)
 
 
 
