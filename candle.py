@@ -73,8 +73,8 @@ class Candle:
 
 
 	def __str__(self):
-		return "Japan candle, data: %s, open: %s, high: %s, low: %s, close: %s, volume: %s, open int: %s" % \
-							(self._date, self._open, self._high, self._low, self._close, self._volume, self._open_int)
+		return "Japan candle, data: %s, open: %s, high: %s, low: %s, close: %s, volume: %s" % \
+				(self._date, self._open, self._high, self._low, self._close, self._volume)
 
 
 							

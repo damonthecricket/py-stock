@@ -29,6 +29,7 @@ def load(name):
 							dictionary["Low"], 
 							dictionary["Close"], 
 							dictionary["Volume"])
+
 		candles.append(candle)
 
 
